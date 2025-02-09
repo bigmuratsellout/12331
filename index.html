@@ -22,6 +22,15 @@
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png');
 
+    // Add rotation animation
+let rotationSpeed = 0.1; // Adjust this value to control the speed of rotation
+function animate() {
+  globe.controls().autoRotate = true;
+  globe.controls().autoRotateSpeed = rotationSpeed;
+  requestAnimationFrame(animate);
+}
+animate();
+    
     const CLOUDS_IMG_URL = './clouds.png'; // from https://github.com/turban/webgl-earth
     const CLOUDS_ALT = 0.004;
     const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
